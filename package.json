@@ -1,0 +1,18 @@
+{
+  "name": "conversation-driven-development",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "marked": "^17.0.0",
+    "yaml": "^2.8.1"
+  }
+}
