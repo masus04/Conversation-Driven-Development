@@ -8,7 +8,7 @@ This repository uses the prefix `CNN`. Issue metadata is authoritative; this boa
 
 | Ready | In Progress | Done |
 |:--|:--|:--|
-| _No issues._ | _No issues._ | [CNN-0001: Establish the standalone framework](CNN-0001-establish-standalone-framework.md) |
+| _No issues._ | _No issues._ | [CNN-0001: Establish the standalone framework](CNN-0001-establish-standalone-framework.md)<br>[CNN-0002: Add acceptance criteria guidance](CNN-0002-acceptance-criteria-guidance.md) |
 
 <details>
 <summary>Backlog</summary>

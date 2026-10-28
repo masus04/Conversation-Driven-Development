@@ -322,6 +322,18 @@ test('close-issue proposes exactly one commit message line with the current issu
   assert.match(skill, /Do not include a body or alternative subjects/i);
 });
 
+test('acceptance criteria stay outcome-based and are revised rather than reinterpreted', () => {
+  const baseline = readFileSync(join(root, '.github/skills/initialize-repository/references/baseline.md'), 'utf8');
+  const create = readFileSync(join(root, '.github/skills/create-issue/SKILL.md'), 'utf8');
+  const close = readFileSync(join(root, '.github/skills/close-issue/SKILL.md'), 'utf8');
+  assert.match(baseline, /each stating one observable end state with a repeatable proof/);
+  assert.match(baseline, /repository-wide hygiene checks .* apply to every issue without being listed/);
+  assert.match(baseline, /never mark a criterion complete under a new interpretation/);
+  assert.match(create, /follow the issue contract: few, one observable outcome each, with repeatable proof/);
+  assert.match(close, /Run the repository's standing checks, then verify every criterion/);
+  assert.match(close, /propose a revision to the developer instead of reinterpreting it/);
+});
+
 test('issue lifecycle placement follows every valid state without moving files', context => {
   const directory = workspace(context);
   initializedFixture(directory, 'issues');

@@ -10,7 +10,7 @@ Read the [portable contracts](../initialize-repository/references/baseline.md), 
 
 1. Read the owning board, canonical template, existing issues, documentation, and relevant implementation context. Check for duplicate or overlapping work.
 2. Discuss reason, outcome, scope, constraints, dependencies, alternatives, and uncertainties. Ask focused questions until another contributor could plan confidently.
-3. Propose observable acceptance criteria with credible proof methods. Summarize the issue and obtain explicit agreement before allocating an ID or writing.
+3. Propose acceptance criteria that follow the issue contract: few, one observable outcome each, with repeatable proof. Keep constraints, execution steps, and repository-wide checks out of them. Summarize the issue and obtain explicit agreement before allocating an ID or writing.
 4. Allocate the next unused number across every issue status using the owning prefix. Resolve concurrent allocation conflicts. Create a stable flat issue file from the board's template with `status: backlog`, `board: archive`, today's creation date, and `closedDate: null`.
 5. Add its sorted link to Backlog and validate metadata, filename, heading, backlinks, and references. Keep empty-location placeholders correct.
 6. Report the agreed scope, created path, acceptance criteria, and any deferred work. Do not implement, triage to Ready without direction, create speculative ADRs, or commit.

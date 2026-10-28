@@ -46,6 +46,8 @@ Keep all issues directly in `issues/`. Use `<PREFIX>-NNNN-short-title.md` with m
 
 The canonical template lives in `issues/README.md`. It contains YAML fields `id`, `title`, `status`, `board`, `createdDate`, `closedDate`. Dates are ISO `YYYY-MM-DD` strings; unset dates are explicit YAML `null`. The H1 begins with the matching ID. Include a board backlink and body sections Reason, Description, Acceptance Criteria, Proof of Success, Implementation Plan, References. Record boundaries and non-goals in Description. Keep plan and evidence separate.
 
+Acceptance criteria fix the agreed outcome before work starts and are only useful when each can be verified without interpretation. Keep them few, each stating one observable end state with a repeatable proof: a command or test, an inspectable artifact at a stated location, a measurement with a threshold, or a dated developer acceptance. Put judgment into one developer-acceptance criterion instead of several overlapping quality criteria. Constraints belong in Description, execution steps such as commits, merges, or removals in the plan, and repository-wide hygiene checks such as links, indexes, and formatting apply to every issue without being listed. When the agreed outcome changes, revise the affected criteria with the developer; never mark a criterion complete under a new interpretation.
+
 The board uses a Ready / In Progress / Done Markdown table and collapsible HTML `details` sections named Backlog and Archive. Empty locations use `_No issues._`. Metadata is authoritative; list every issue exactly once in the matching location, sorted by ID, with `<br>` between table-cell links and list items in details sections.
 
 | Status | Board | Location |
@@ -88,7 +90,7 @@ Each skill has valid YAML frontmatter with directory-matching `name`, a quoted d
 
 ### Create Issue
 
-Read context and existing work to avoid duplication. Discuss reason, desired outcome, scope, constraints, dependencies, meaningful alternatives, and observable acceptance criteria with credible proof. Resolve high-level ambiguity and obtain agreement before allocating an ID or writing. Create a backlog/archive issue from the canonical template and update Backlog. Do not implement or create speculative ADRs.
+Read context and existing work to avoid duplication. Discuss reason, desired outcome, scope, constraints, dependencies, meaningful alternatives, and acceptance criteria that follow the issue contract. Resolve high-level ambiguity and obtain agreement before allocating an ID or writing. Create a backlog/archive issue from the canonical template and update Backlog. Do not implement or create speculative ADRs.
 
 ### Implement Issue
 
@@ -96,7 +98,7 @@ Require an unambiguous ready/current issue. Read the issue and owning implementa
 
 ### Close Issue
 
-Require an unambiguous in-progress/current issue. Verify every current acceptance criterion and record concrete evidence; unsupported criteria or material unapproved deviations leave it in progress. Apply enabled-module close-out requirements from this baseline, including any required reviews, approvals, evidence, and documentation updates. Reconcile affected knowledge and indexes; clean up only issue-scoped artifacts. Finalize linked ADRs with explicit confirmation, preserving earlier acceptance dates and updating reciprocal supersession metadata. Resolve proposed decisions rather than silently accepting them. Run focused validation, mark done/current with a closure date, update the board, and inspect the diff. Propose exactly one single-line commit message beginning with the exact `id` value from the current issue's metadata, including its configured prefix, followed by a colon. Do not infer or copy an ID from another issue, and do not include a body or alternative subjects. Do not archive, commit, push, merge, or publish without separate authorization.
+Require an unambiguous in-progress/current issue. Run the repository's standing checks, then verify every current acceptance criterion and record concrete evidence; unsupported criteria or material unapproved deviations leave it in progress. Propose revising a criterion that no longer fits the agreed outcome instead of reinterpreting it. Apply enabled-module close-out requirements from this baseline, including any required reviews, approvals, evidence, and documentation updates. Reconcile affected knowledge and indexes; clean up only issue-scoped artifacts. Finalize linked ADRs with explicit confirmation, preserving earlier acceptance dates and updating reciprocal supersession metadata. Resolve proposed decisions rather than silently accepting them. Run focused validation, mark done/current with a closure date, update the board, and inspect the diff. Propose exactly one single-line commit message beginning with the exact `id` value from the current issue's metadata, including its configured prefix, followed by a colon. Do not infer or copy an ID from another issue, and do not include a body or alternative subjects. Do not archive, commit, push, merge, or publish without separate authorization.
 
 ## Initialization Verification
 
